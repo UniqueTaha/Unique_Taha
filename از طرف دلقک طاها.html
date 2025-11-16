@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صفحه رسمی farhadpubgor - گیم‌پلی، ویدیوهای جذاب و محتوای ویژه در شبکه‌های اجتماعی">
+    <meta name="keywords" content="farhadpubgor, گیم‌پلی, یوتیوب, آپارات, اینستاگرام, تلگرام">
+    <meta name="author" content="unique taha">
+    <meta property="og:title" content="farhadpubgor | شبکه‌های رسمی من">
+    <meta property="og:description" content="صفحه رسمی farhadpubgor - گیم‌پلی، ویدیوهای جذاب و محتوای ویژه">
+    <meta property="og:type" content="website">
+    <title>farhadpubgor | شبکه‌های رسمی من</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💥</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Galaxy Nebula Effect */
+        .nebula {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: radial-gradient(ellipse at center, 
+                rgba(138, 43, 226, 0.15) 0%, 
+                rgba(75, 0, 130, 0.1) 40%, 
+                transparent 70%);
+            animation: nebulaPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes nebulaPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(118, 75, 162, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(118, 75, 162, 0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(118, 75, 162, 0.8)); }
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            color: #b19cd9;
+            margin-top: 10px;
+        }
+
+        /* Social Links Container */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .social-card:nth-child(1) { animation-delay: 0.2s; }
+        .social-card:nth-child(2) { animation-delay: 0.4s; }
+        .social-card:nth-child(3) { animation-delay: 0.6s; }
+        .social-card:nth-child(4) { animation-delay: 0.8s; }
+        .social-card:nth-child(5) { animation-delay: 1s; }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(118, 75, 162, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .social-card:hover::before {
+            opacity: 1;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: rgba(118, 75, 162, 0.5);
+            box-shadow: 0 20px 40px rgba(118, 75, 162, 0.3),
+                        0 0 30px rgba(118, 75, 162, 0.2);
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .social-card:nth-child(1) .social-icon { animation-delay: 0s; }
+        .social-card:nth-child(2) .social-icon { animation-delay: 0.2s; }
+        .social-card:nth-child(3) .social-icon { animation-delay: 0.4s; }
+        .social-card:nth-child(4) .social-icon { animation-delay: 0.6s; }
+        .social-card:nth-child(5) .social-icon { animation-delay: 0.8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .social-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .social-card p {
+            color: #b19cd9;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .social-card a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-card a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+
+        .vpn-link-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .vpn-link-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: floatParticle 15s infinite linear;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Meteor/Shooting Star Animation */
+        .meteor {
+            position: fixed;
+            width: 2px;
+            height: 150px;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.8) 30%,
+                rgba(118, 75, 162, 0.6) 70%,
+                transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+                        0 0 30px rgba(118, 75, 162, 0.5);
+            animation: meteorFall linear;
+            transform-origin: top center;
+        }
+
+        @keyframes meteorFall {
+            0% {
+                transform: translateY(-150px) translateX(0) rotate(-45deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(100vh + 150px)) translateX(400px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+
+        /* Modal for VPN Warning */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: rgba(20, 20, 30, 0.95);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(118, 75, 162, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(118, 75, 162, 0.3);
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            color: #b19cd9;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .modal-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-btn.confirm {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        .modal-btn.confirm:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+
+        .modal-btn.cancel {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-btn.cancel:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Copyright Footer */
+        .footer {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 30px 20px;
+            color: #b19cd9;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        /* Loading Screen */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(118, 75, 162, 0.3);
+            border-top: 4px solid #764ba2;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            color: #b19cd9;
+            font-size: 1.2rem;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.6);
+        }
+
+        /* Custom Cursor Effect */
+        .cursor-glow {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(118, 75, 162, 0.6) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+            mix-blend-mode: screen;
+        }
+
+        .cursor-glow.active {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .social-card {
+                padding: 25px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+            }
+
+            .modal-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .modal-content p {
+                font-size: 1rem;
+            }
+
+            .modal-buttons {
+                flex-direction: column;
+            }
+
+            .modal-btn {
+                width: 100%;
+            }
+
+            .scroll-top {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                left: 20px;
+                font-size: 1.3rem;
+            }
+
+            .cursor-glow {
+                display: none; /* Hide on mobile for better performance */
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .social-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1400px;
+            }
+
+            .header h1 {
+                font-size: 4.5rem;
+            }
+
+            .social-links {
+                max-width: 1100px;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header {
+                margin-bottom: 30px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .social-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">در حال بارگذاری...</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="stars" id="stars"></div>
+    <div class="nebula"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>💥 farhadpubgor</h1>
+            <p class="subtitle">شبکه‌های رسمی من</p>
+        </div>
+
+        <div class="social-links">
+            <div class="social-card">
+                <span class="social-icon">📸</span>
+                <h3>اینستاگرام</h3>
+                <p>✨ گیم پلی کوتاه و استوری ها</p>
+                <a href="https://www.instagram.com/farhadpubgor?igsh=dmt1OGE1M29pdjl0" target="_blank">مشاهده پروفایل</a>
+            </div>
+
+            <div class="social-card">
+                <span class="social-icon">🔔</span>
+                <h3>تلگرام</h3>
+                <p>🎯 خبرهای فوری، پیش‌نمایش و مطالب ویژه</p>
+                <a href="https://t.me/farhadpubgor" target="_blank">عضویت در کانال</a>
+            </div>
+
+            <div class="social-card">
+                <span class="social-icon">▶️</span>
+                <h3>یوتیوب</h3>
+                <p>🔥 ویدیوهای گیم‌پلی، لایو استریم و ترفندها</p>
+                <a href="https://youtube.com/@farhadpubgor?si=jRLv6df2iQPpZxBV" target="_blank">مشاهده کانال</a>
+            </div>
+
+            <div class="social-card">
+                <span class="social-icon">📺</span>
+                <h3>آپارات</h3>
+                <p>🇮🇷 🔥 ویدیوهای گیم‌پلی</p>
+                <button class="vpn-link-btn" data-url="http://aparat.com/farhad_qassemi">مشاهده کانال</button>
+            </div>
+
+            <div class="social-card">
+                <span class="social-icon">💖</span>
+                <h3>حمایت مالی (دونیت)</h3>
+                <p>❤️ هر مبلغی دلگرمیه و کمک می‌کنه بیشتر با شما باشم</p>
+                <button class="vpn-link-btn" data-url="http://reymit.ir/farhadqassemi">حمایت کنید</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 | طراحی و توسعه توسط <strong>unique taha</strong></p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="بازگشت به بالا">↑</button>
+
+    <!-- Modal for VPN Warning -->
+    <div class="modal-overlay" id="vpnModal">
+        <div class="modal-content">
+            <h3>⚠️ توجه</h3>
+            <p>برای دسترسی به این لینک، لطفاً فیلترشکن خود را خاموش کنید.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" id="confirmBtn">تایید و ادامه</button>
+                <button class="modal-btn cancel" id="cancelBtn">انصراف</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numStars = 150;
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                const size = Math.random() * 2 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create floating particles
+        function createParticles() {
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                document.body.appendChild(particle);
+            }
+        }
+
+        // Create meteors/shooting stars
+        function createMeteor() {
+            const meteor = document.createElement('div');
+            meteor.className = 'meteor';
+            
+            // Random starting position from top
+            const startX = Math.random() * (window.innerWidth * 0.8);
+            const startY = -150;
+            const duration = Math.random() * 1.5 + 1; // 1 to 2.5 seconds
+            const angle = -45 + (Math.random() * 10 - 5); // Slight variation in angle
+            
+            meteor.style.left = startX + 'px';
+            meteor.style.top = startY + 'px';
+            meteor.style.animationDuration = duration + 's';
+            meteor.style.transform = `rotate(${angle}deg)`;
+            
+            // Random size variation
+            const size = Math.random() * 0.5 + 0.5;
+            meteor.style.width = (2 * size) + 'px';
+            meteor.style.height = (150 * size) + 'px';
+            
+            document.body.appendChild(meteor);
+            
+            // Remove meteor after animation
+            setTimeout(() => {
+                if (meteor.parentNode) {
+                    meteor.remove();
+                }
+            }, (duration + 0.5) * 1000);
+        }
+
+        // Create meteors periodically
+        function startMeteorShower() {
+            // Create initial meteors with delay
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    createMeteor();
+                }, i * 2500);
+            }
+            
+            // Continue creating meteors every few seconds
+            setInterval(() => {
+                if (Math.random() > 0.4) { // 60% chance
+                    createMeteor();
+                }
+            }, 5000);
+        }
+
+        // VPN Modal Management
+        let pendingUrl = null;
+        const modal = document.getElementById('vpnModal');
+        const confirmBtn = document.getElementById('confirmBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const vpnButtons = document.querySelectorAll('.vpn-link-btn');
+
+        // Handle VPN link buttons
+        vpnButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                pendingUrl = btn.getAttribute('data-url');
+                modal.classList.add('active');
+            });
+        });
+
+        // Confirm button - open link
+        confirmBtn.addEventListener('click', () => {
+            if (pendingUrl) {
+                window.open(pendingUrl, '_blank');
+                modal.classList.remove('active');
+                pendingUrl = null;
+            }
+        });
+
+        // Cancel button - close modal
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            pendingUrl = null;
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                pendingUrl = null;
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                pendingUrl = null;
+            }
+        });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000); // Show loader for 1 second
+            
+            createStars();
+            createParticles();
+            startMeteorShower();
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Custom Cursor Glow Effect
+        const cursorGlow = document.getElementById('cursorGlow');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Smooth cursor follow
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            cursorGlow.style.left = cursorX + 'px';
+            cursorGlow.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Activate cursor glow on hover over interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .social-card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorGlow.classList.add('active');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorGlow.classList.remove('active');
+            });
+        });
+
+        // Add parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const nebula = document.querySelector('.nebula');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            nebula.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+        });
+
+        // Handle window resize for responsive design
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // Recalculate positions if needed
+            }, 250);
+        });
+    </script>
+</body>
+</html>
+
